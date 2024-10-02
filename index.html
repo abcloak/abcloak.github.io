@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="cloakurl" placeholder="Website to cloak">
+    <button type="button" id="cloak">CLOAK!</button>
+    
+    <script>
+        document.getElementById("cloak").onclick = function(){
+            var url = document.getElementById("cloakurl").value;
+            if (url.length > 7){
+                var w = window.open("about:blank#blocked", "_blank", "status=no,toolbar=no,location=no,directories=no,resizable=yes,scrollbars=yes,width=9999,height=9999");
+                w.document.write(`<iframe style="height:100%; width: 100%; border: none; position: fixed; top: 0; right: 0; left: 0; bottom: 0; border: none;" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation allow-top-navigation-by-user-activation" src="${url}"></iframe>`);
+            }
+        }
+    </script>
+</body>
+</html>
